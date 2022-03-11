@@ -1,27 +1,28 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
-
+* main - Print combinations of two digit numbers
+*
+* Return: Always 0 (Success)
+*/
 int main(void)
 {
 	int x;
+	int y;
 
-	for (x = 0; x < 100; x++)
+	for (x = 0; x <= 9; x++)
 	{
-		putchar((x / 10) + '0');
-		putchar((x % 10) + '0');
-		if (x != 99)
+		for (y = x + 1; y <= 9; y++)
 		{
-			putchar(',');
-			putchar(' ');
+			putchar(x + '0');
+			putchar(y + '0');
+
+			if (x < 9)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
-		
 	}
 	putchar('\n');
 
