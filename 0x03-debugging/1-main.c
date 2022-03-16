@@ -14,7 +14,7 @@ int main(void)
 	i = 0;
 
 	/**
-     * @breif: causes an infinite loop
+     * @breif: causes an infinite loop.
      * while (i < 10)
 	{
 		putchar(i);
