@@ -25,4 +25,6 @@ int main(void)
 	}
 	pass[i] = '\0';
 	printf("%s\n", pass);
+
+	return (0);
 }
