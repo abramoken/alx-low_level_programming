@@ -3,10 +3,10 @@
 ## Resources
 Read or watch:
 
-- [C - Arrays](https://alx-intranet.hbtn.io/projects/216)
-- [C - Pointers](https://alx-intranet.hbtn.io/projects/216)
-- [C - Strings](https://alx-intranet.hbtn.io/projects/216)
-- [Memory Layout](https://alx-intranet.hbtn.io/projects/216)
+- [C - Arrays](https://www.tutorialspoint.com/cprogramming/c_arrays.htm)
+- [C - Pointers](https://www.tutorialspoint.com/cprogramming/c_pointers.htm)
+- [C - Strings](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+- [Memory Layout](https://aticleworld.com/memory-layout-of-c-program/)
 
 ## Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
