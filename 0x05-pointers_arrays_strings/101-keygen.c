@@ -16,9 +16,6 @@ int main(void)
 
 	srand((unsigned int)(time(NULL)));
 
-	printf("Press enter to get a twelve-character password\n");
-	getchar();
-
 	for (i = 0; i < 12; i++)
 	{
 		pass[i] = 33 + rand() % 94;
