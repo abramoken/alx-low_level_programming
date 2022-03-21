@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -12,7 +13,7 @@ int main(void)
 {
 	int x;
 
-	srand((time(0)));
+	srand(time(0));
 
 	x = rand();
 	printf("%i\n", x);
