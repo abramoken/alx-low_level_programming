@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -11,12 +10,30 @@
 
 int main(void)
 {
-	int x;
+	int x = 2772, i = 0, y = 0, aux;
+	char password[100];
+	time_t t;
 
-	srand(time(0));
+	srand((int) time(&t));
+	while (x > 126)
+	{
+		aux = rand() % 126;
+		password[i] = aux;
+		x -= aux;
+		i++;
+	}
 
-	x = rand();
-	printf("%i\n", x);
+	if (x > 0)
+		password[i] = x;
+	else
+	{
+		i--;
+	}
 
+	for (; y <= i; y++)
+	{
+		printf("%c", password[y]);
+	}
+	printf("\n");
 	return (0);
 }
