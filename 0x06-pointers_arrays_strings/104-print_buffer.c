@@ -3,7 +3,7 @@
 
 /**
  * print_buffer - a function that prints a buffer.
- * 
+ *
  * @b: The buffer to be printed.
  * @size: The number of bytes to be printed from the buffer.
  */
