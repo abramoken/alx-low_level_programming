@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _strstr -  a function that locates a substring.
+ * _strstr - a function that locates a substring.
  * @haystack: an input string to search in
  * @needle: an input string to locate from string haystack
  * Return:  a pointer to the beginning of the located substring,
