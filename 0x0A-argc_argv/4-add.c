@@ -6,7 +6,8 @@
  * main - a program that adds positive numbers.
  * @argc: The arguments' counter
  * @argv: Argument vector, is a one-dimensional array of strings
- * Return: Always 0 (Success)
+ * Return: 1 If one of the number contains symbols that are not digits
+ * or 0 otherwise
  */
 int main(int argc, char **argv)
 {
