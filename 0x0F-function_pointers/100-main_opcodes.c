@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 /**
- * main - prints opcode of own main function
+ * main - prints opcode of its own main function
  * @argc: argument count
- * @argv: array of arguments
+ * @argv: argument vector, is a one-dimensional array of strings
  * Return: 1 or 2 on fail, 0 on success
  */
 int main(int argc, char *argv[])
