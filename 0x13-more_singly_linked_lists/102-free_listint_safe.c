@@ -7,41 +7,86 @@
  * @head: a pointer listint_t structure
  * Return: size of the list that was freed
  */
-void free_list(listint_t *head);
+size_t looped_listint_count(listint_t *head);
 
 size_t free_listint_safe(listint_t **h)
 {
-	size_t counter = 0;
-	listint_t *temp;
+	listint_t *tmp;
+	size_t nodes, index;
 
-	temp = *h;
-	while (temp)
+	nodes = looped_listint_count(*h);
+
+	if (nodes == 0)
 	{
-		temp = *h;
-		temp = temp->next;
-		free_list(temp);
-		counter++;
+		for (; h != NULL && *h != NULL; nodes++)
+		{
+			tmp = (*h)->next;
+			free(*h);
+			*h = tmp;
+		}
 	}
-	*h = NULL;
 
-	return (counter);
+	else
+	{
+		for (index = 0; index < nodes; index++)
+		{
+			tmp = (*h)->next;
+			free(*h);
+			*h = tmp;
+		}
+
+		*h = NULL;
+	}
+
+	h = NULL;
+
+	return (nodes);
 }
 
 /**
- * free_list - a function that frees a listint_t recursively
- * @head: a pointer to the listint_t structure
- * Return: Nothing
+ * looped_listint_count - Counts the number of unique nodes
+ * in a looped listint_t linked list.
+ * @head: A pointer to the head of the listint_t to check.
+ *
+ * Return: list if not looped - 0, Otherwise - the number
+ * of unique nodes in the list.
  */
-void free_list(listint_t *head)
+size_t looped_listint_count(listint_t *head)
 {
-	listint_t *temp;
+	listint_t *current, *subs;
+	size_t nodes = 1;
 
-	if (head)
+	if (head == NULL || head->next == NULL)
+		return (0);
+
+	current = head->next;
+	subs = (head->next)->next;
+
+	while (subs)
 	{
-		temp = head;
-		temp = temp->next;
-		free(temp);
-		free_list(temp);
+		if (current == subs)
+		{
+			current = head;
+			while (current != subs)
+			{
+				nodes++;
+				current = current->next;
+				subs = subs->next;
+			}
+
+			current = current->next;
+			while (current != subs)
+			{
+				nodes++;
+				current = current->next;
+			}
+
+			return (nodes);
+		}
+
+		current = current->next;
+		subs = (subs->next)->next;
 	}
-	free(head);
+
+	return (0);
 }
